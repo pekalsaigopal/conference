@@ -11,8 +11,7 @@ public class AppConfig {
 
     @Bean(name = "speakerService")
     public SpeakerService getSpeakerService(){
-        SpeakerServiceImpl service = new SpeakerServiceImpl(); // hard coded
-        service.setRepository(getSpeakerRepository());//we are injecting manually
+        SpeakerServiceImpl service = new SpeakerServiceImpl(getSpeakerRepository()); // hard coded
         return service;
     }
 

@@ -1,3 +1,5 @@
+import in.psg.repository.HibernateSpeakerRepositoryImpl;
+import in.psg.repository.SpeakerRepository;
 import in.psg.service.SpeakerService;
 import in.psg.service.SpeakerServiceImpl;
 import org.springframework.context.annotation.Bean;
@@ -10,4 +12,10 @@ public class AppConfig {
     public SpeakerService getSpeakerService(){
         return new SpeakerServiceImpl();
     }
+
+    @Bean(name = "speakerRepository")
+    public SpeakerRepository getSpeakerRepository(){
+        return new HibernateSpeakerRepositoryImpl();
+    }
+
 }
